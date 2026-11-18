@@ -1,1 +1,60 @@
 @import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-primary: #14333A;
+  --color-primary-hover: #1C424A;
+  --color-gold: #B2A77E;
+  --color-background: #F7F5F0;
+  --color-heading: #14333A;
+
+  /* Supporting UI colors */
+  --color-surface: #FFFFFF;
+  --color-surface-secondary: #EEECE7;
+  --color-text: #212121;
+  --color-muted: #757575;
+  --color-border: #DEDCD5;
+  --color-focus: #426B70;
+  --color-error: #B42318;
+
+  /* Font families */
+  --font-sans: 'League Spartan', system-ui, -apple-system, sans-serif;
+  --font-ar: 'Tajawal', system-ui, -apple-system, sans-serif;
+
+  /* Border radius tokens */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-2xl: 30px;
+  --radius-pill: 9999px;
+  --radius-full: 9999px;
+}
+
+/* Global resets & typography */
+html {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  text-align: start;
+}
+
+/* RTL Typography & Direction */
+[dir="rtl"] {
+  font-family: var(--font-ar);
+}
+
+/* Accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}

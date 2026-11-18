@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "home": "Home",
+    "shop": "Collection",
+    "about": "House",
+    "contact": "Concierge",
+    "faq": "FAQ",
+    "favorites": "Wishlist",
+    "admin": "Admin"
+  },
+  "hero": {
+    "subtitle": "High Eyewear House",
+    "title": "Sculpted Light & Timeless Silhouette",
+    "description": "An intimate exploration of modern luxury eyewear. Masterful balance, Mediterranean soul, and understated sophistication.",
+    "cta": "Explore Collection",
+    "secondary": "The Maison"
+  },
+  "sections": {
+    "collectionTitle": "Permanent Collection",
+    "collectionSubtitle": "Signature optical frames defined by minimalist contours and balanced proportions.",
+    "viewAll": "View All Editions",
+    "editorial1Title": "Mediterranean Light",
+    "editorial1Subtitle": "Designed for clarity under open skies. Every contour is measured to elevate personal presence.",
+    "editorial2Title": "Masterful Craftsmanship",
+    "editorial2Subtitle": "Hand-finished bevels, seamless hinge alignments, and tactile balance across every silhouette.",
+    "editorial3Title": "The Art of Restraint",
+    "editorial3Subtitle": "Luxury without noise. Quiet confidence defined by pure forms and uncompromised optical poise.",
+    "discoverMaison": "Discover the House",
+    "inquireConcierge": "Inquire via WhatsApp"
+  },
+  "product": {
+    "inquire": "Inquire via WhatsApp",
+    "reference": "Reference",
+    "category": "Category",
+    "status": "Availability",
+    "details": "Craftsmanship Details",
+    "share": "Share Piece",
+    "related": "Complementary Editions",
+    "addedToWishlist": "Saved to Wishlist",
+    "removedFromWishlist": "Removed from Wishlist",
+    "viewWishlist": "View Wishlist"
+  },
+  "shop": {
+    "title": "Eyewear Collection",
+    "subtitle": "Discover the complete catalog of curated ALUNE sunglasses.",
+    "filterAll": "All Editions",
+    "filterFeatured": "Featured",
+    "sortDefault": "Default Arrangement",
+    "sortNewest": "Newest Editions",
+    "results": "Pieces found",
+    "empty": "No editions match the current filter selection."
+  },
+  "favorites": {
+    "title": "Your Wishlist",
+    "subtitle": "Locally saved pieces awaiting your private inquiry.",
+    "empty": "Your wishlist is currently empty.",
+    "emptyAction": "Explore the Collection",
+    "clear": "Clear Wishlist",
+    "inquireAll": "Inquire About Selected Pieces"
+  },
+  "about": {
+    "title": "The House of ALUNE",
+    "subtitle": "Born from Mediterranean light, committed to quiet sophistication.",
+    "pillar1Title": "Architectural Harmony",
+    "pillar1Text": "We approach eyewear not merely as an accessory, but as an architectural extension of the wearer’s gaze.",
+    "pillar2Title": "Purity of Materials",
+    "pillar2Text": "Selecting custom acetates and balanced hardware calibrated for resilience and tactile luxury.",
+    "pillar3Title": "Direct Concierge",
+    "pillar3Text": "Personalized acquisition directly through WhatsApp concierge, ensuring bespoke attention for every client."
+  },
+  "contact": {
+    "title": "Direct Concierge",
+    "subtitle": "Our concierge service is dedicated to providing personalized counsel, availability confirmation, and private ordering.",
+    "whatsappTitle": "Instant WhatsApp Assistance",
+    "whatsappDesc": "Connect directly with our client advisors for bespoke guidance and order requests.",
+    "openWhatsApp": "Message WhatsApp Concierge",
+    "formTitle": "Written Inquiry",
+    "name": "Full Name",
+    "email": "Email Address",
+    "subject": "Subject",
+    "message": "Your Message",
+    "submit": "Send Message",
+    "sentSuccess": "Your inquiry has been received. Our concierge will contact you shortly."
+  },
+  "faq": {
+    "title": "Frequently Inquired",
+    "subtitle": "Helpful guidance regarding acquisition, ordering through concierge, and product care.",
+    "q1": "How do I purchase ALUNE sunglasses?",
+    "a1": "ALUNE operates an intimate direct-concierge ordering model via WhatsApp. Simply click the purchase inquiry button on any piece to open a direct dialogue with our client team.",
+    "q2": "Are sunglasses authentic and original designs?",
+    "a2": "Yes. Every ALUNE edition is developed with dedicated optical standards and meticulous attention to proportion, finish, and structural poise.",
+    "q3": "Can I save favorites for later review?",
+    "a3": "Yes. Clicking the heart icon on any edition saves it directly to your browser's private wishlist without requiring an account.",
+    "q4": "How can I check availability for specific models?",
+    "a4": "You can inquire directly through our WhatsApp concierge with the model reference code for real-time availability."
+  },
+  "footer": {
+    "tagline": "Modern luxury sunglasses and optical silhouettes.",
+    "navigation": "Navigation",
+    "clientCare": "Client Care",
+    "legal": "© 2026 ALUNE. All rights reserved.",
+    "terms": "Privacy & Disclaimers",
+    "switchLang": "Language"
+  },
+  "admin": {
+    "portal": "ALUNE Management Suite",
+    "loginTitle": "Administrative Access",
+    "loginSubtitle": "Enter credentials to access catalog and operational overview.",
+    "username": "Administrator ID",
+    "password": "Security Key",
+    "signIn": "Access Dashboard",
+    "dashboard": "Dashboard",
+    "products": "Catalog Management",
+    "categories": "Categories",
+    "orders": "Concierge Inquiries",
+    "settings": "Settings",
+    "totalProducts": "Total Editions",
+    "totalInquiries": "Recorded Inquiries",
+    "activeCategories": "Active Categories",
+    "notice": "Administrative frontend scaffold. In production, authentication and persistent records are governed by Laravel API.",
+    "logout": "Exit Session"
+  }
+}

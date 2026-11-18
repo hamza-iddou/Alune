@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "shop": "Collection",
+    "about": "La Maison",
+    "contact": "Conciergerie",
+    "faq": "FAQ",
+    "favorites": "Coups de Cœur",
+    "admin": "Admin"
+  },
+  "hero": {
+    "subtitle": "Haute Maison de Lunetterie",
+    "title": "Lumière Sculptée & Silhouettes Intemporelles",
+    "description": "Une exploration intime du luxe moderne de la lunetterie. Équilibre maîtrisé, esprit méditerranéen et sophistication discrète.",
+    "cta": "Explorer la Collection",
+    "secondary": "La Maison"
+  },
+  "sections": {
+    "collectionTitle": "Collection Permanente",
+    "collectionSubtitle": "Montures optiques emblématiques définies par des contours minimalistes et des proportions équilibrées.",
+    "viewAll": "Voir Toutes les Pièces",
+    "editorial1Title": "Lumière Méditerranéenne",
+    "editorial1Subtitle": "Conçue pour la clarté sous un ciel ouvert. Chaque galbe est calibré pour sublimer le regard.",
+    "editorial2Title": "Artisanat Magistral",
+    "editorial2Subtitle": "Biseautages polis à la main, charnières parfaitement ajustées et harmonie tactile sur chaque monture.",
+    "editorial3Title": "L'Art de la Retenue",
+    "editorial3Subtitle": "Le luxe sans artifice. Une confiance sereine définie par des formes pures et un équilibre optique sans compromis.",
+    "discoverMaison": "Découvrir la Maison",
+    "inquireConcierge": "Consulter par WhatsApp"
+  },
+  "product": {
+    "inquire": "Commander via WhatsApp",
+    "reference": "Référence",
+    "category": "Catégorie",
+    "status": "Disponibilité",
+    "details": "Détails de Fabrication",
+    "share": "Partager",
+    "related": "Modèles Complémentaires",
+    "addedToWishlist": "Ajouté aux Coups de Cœur",
+    "removedFromWishlist": "Retiré des Coups de Cœur",
+    "viewWishlist": "Voir mes favoris"
+  },
+  "shop": {
+    "title": "Catalogue Lunettes",
+    "subtitle": "Découvrez l'ensemble de notre sélection exclusive de lunettes de soleil ALUNE.",
+    "filterAll": "Toutes les Pièces",
+    "filterFeatured": "Sélection Privée",
+    "sortDefault": "Disposition par défaut",
+    "sortNewest": "Nouvelles Éditions",
+    "results": "Modèles trouvés",
+    "empty": "Aucun modèle ne correspond à vos critères."
+  },
+  "favorites": {
+    "title": "Vos Coups de Cœur",
+    "subtitle": "Vos modèles présélectionnés dans votre navigateur pour une commande directe.",
+    "empty": "Votre liste de favoris est vide.",
+    "emptyAction": "Découvrir la Collection",
+    "clear": "Vider les favoris",
+    "inquireAll": "Demander conseil pour mes favoris"
+  },
+  "about": {
+    "title": "La Maison ALUNE",
+    "subtitle": "Née de la lumière méditerranéenne, dédiée à une élégance sobre et pérenne.",
+    "pillar1Title": "Harmonie Architecturale",
+    "pillar1Text": "Nous concevons la lunette non comme un simple ornement, mais comme une extension architecturale du regard.",
+    "pillar2Title": "Pureté des Matériaux",
+    "pillar2Text": "Sélection rigoureuse d'acétates sur mesure et de pièces métalliques équilibrées pour une sensation tactile luxueuse.",
+    "pillar3Title": "Service Concierge Dédié",
+    "pillar3Text": "Une acquisition personnalisée et directe par WhatsApp, assurant une écoute sur mesure à chaque client."
+  },
+  "contact": {
+    "title": "Conciergerie Privée",
+    "subtitle": "Notre service client vous accompagne personnellement pour toute confirmation de disponibilité ou commande.",
+    "whatsappTitle": "Assistance WhatsApp Directe",
+    "whatsappDesc": "Échangez directement avec nos conseillers pour un conseil personnalisé et la prise en charge de votre commande.",
+    "openWhatsApp": "Contacter par WhatsApp",
+    "formTitle": "Message Écrit",
+    "name": "Nom complet",
+    "email": "Adresse email",
+    "subject": "Objet",
+    "message": "Votre message",
+    "submit": "Envoyer le Message",
+    "sentSuccess": "Votre message a bien été envoyé. Notre conciergerie vous répondra dans les plus brefs délais."
+  },
+  "faq": {
+    "title": "Questions Fréquentes",
+    "subtitle": "Toutes les informations sur notre conciergerie, le processus de commande et l'entretien de vos lunettes.",
+    "q1": "Comment acheter mes lunettes ALUNE ?",
+    "a1": "ALUNE privilégie une expérience client personnalisée via WhatsApp. Cliquez simplement sur 'Commander via WhatsApp' pour ouvrir une discussion directe avec notre équipe.",
+    "q2": "Les modèles sont-ils des créations originales ?",
+    "a2": "Oui. Chaque édition ALUNE est conçue selon des normes optiques exigeantes et une attention méticuleuse portée aux finitions.",
+    "q3": "Puis-je enregistrer mes montures préférées ?",
+    "a3": "Absolument. En cliquant sur le cœur d'une monture, vous la sauvegardez localement dans vos coups de cœur sans création de compte.",
+    "q4": "Comment vérifier la disponibilité d'une référence ?",
+    "a4": "Notre conciergerie WhatsApp vous renseigne instantanément sur les stocks disponibles en indiquant la référence du modèle."
+  },
+  "footer": {
+    "tagline": "Haute lunetterie contemporaine et silhouettes d'exception.",
+    "navigation": "Navigation",
+    "clientCare": "Service Client",
+    "legal": "© 2026 ALUNE. Tous droits réservés.",
+    "terms": "Mentions Légales",
+    "switchLang": "Langue"
+  },
+  "admin": {
+    "portal": "Espace d'Administration ALUNE",
+    "loginTitle": "Accès Administrateur",
+    "loginSubtitle": "Veuillez renseigner vos identifiants pour accéder à la gestion du catalogue.",
+    "username": "Identifiant",
+    "password": "Mot de passe",
+    "signIn": "Se connecter",
+    "dashboard": "Tableau de Bord",
+    "products": "Gestion du Catalogue",
+    "categories": "Catégories",
+    "orders": "Demandes Conciergerie",
+    "settings": "Paramètres",
+    "totalProducts": "Total Éditions",
+    "totalInquiries": "Demandes reçues",
+    "activeCategories": "Catégories actives",
+    "notice": "Interface administrative de démonstration. En production, l'accès et les données sont sécurisés par l'API Laravel.",
+    "logout": "Déconnexion"
+  }
+}
