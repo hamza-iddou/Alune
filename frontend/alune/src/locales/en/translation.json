@@ -43,6 +43,9 @@
   "shop": {
     "title": "Eyewear Collection",
     "subtitle": "Discover the complete catalog of curated ALUNE sunglasses.",
+    "catAll": "All",
+    "catMen": "Homme",
+    "catWomen": "Femme",
     "filterAll": "All Editions",
     "filterFeatured": "Featured",
     "sortDefault": "Default Arrangement",

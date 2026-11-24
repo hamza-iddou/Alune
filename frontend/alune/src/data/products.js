@@ -15,6 +15,7 @@ export const PRODUCTS = [
     category: 'Sunglasses',
     categoryFr: 'Lunettes de soleil',
     categoryAr: 'نظارات شمسية',
+    gender: 'men',
     image: '/Products/Prod1.jpg',
     secondaryImages: [
       '/Products/Prod1.jpg',
@@ -37,6 +38,7 @@ export const PRODUCTS = [
     category: 'Sunglasses',
     categoryFr: 'Lunettes de soleil',
     categoryAr: 'نظارات شمسية',
+    gender: 'women',
     image: '/Products/Prod1.jpg',
     secondaryImages: [
       '/Products/Prod1.jpg',
@@ -59,6 +61,7 @@ export const PRODUCTS = [
     category: 'Sunglasses',
     categoryFr: 'Lunettes de soleil',
     categoryAr: 'نظارات شمسية',
+    gender: 'men',
     image: '/Products/Prod1.jpg',
     secondaryImages: [
       '/Products/Prod1.jpg',
@@ -81,6 +84,7 @@ export const PRODUCTS = [
     category: 'Sunglasses',
     categoryFr: 'Lunettes de soleil',
     categoryAr: 'نظارات شمسية',
+    gender: 'women',
     image: '/Products/Prod1.jpg',
     secondaryImages: [
       '/Products/Prod1.jpg'

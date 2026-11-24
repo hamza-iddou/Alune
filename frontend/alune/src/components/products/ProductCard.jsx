@@ -3,11 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { Heart, MessageCircle, ArrowUpRight } from 'lucide-react';
 import { useFavoritesStore } from '../../store/favoritesStore';
 import { generateWhatsAppLink } from '../../utils/constants';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, index = 0 }) {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language?.substring(0, 2) || 'fr';
   const { toggleFavorite, isFavorite } = useFavoritesStore();
+  const [ref, isVisible] = useScrollReveal();
 
   const favorite = isFavorite(product.id);
 
@@ -27,7 +29,13 @@ export default function ProductCard({ product }) {
   });
 
   return (
-    <div className="group relative bg-white border border-[#DEDCD5] rounded-xl overflow-hidden flex flex-col justify-between w-full min-w-0 transition-all duration-300 hover:shadow-[0_12px_24px_-6px_rgba(20,51,58,0.06)] hover:border-[#B2A77E]/50">
+    <div
+      ref={ref}
+      style={{ transitionDelay: `${index * 80}ms` }}
+      className={`group relative bg-white border border-[#DEDCD5] rounded-xl overflow-hidden flex flex-col justify-between w-full min-w-0 transition-all duration-300 hover:shadow-[0_12px_24px_-6px_rgba(20,51,58,0.06)] hover:border-[#B2A77E]/50 reveal-init ${
+        isVisible ? 'reveal-visible' : ''
+      }`}
+    >
       
       {/* Product Image Stage (4:5 Aspect Ratio) */}
       <div className="relative aspect-[4/5] bg-[#EEECE7]/40 p-5 sm:p-6 flex items-center justify-center overflow-hidden">

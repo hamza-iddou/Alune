@@ -43,6 +43,9 @@
   "shop": {
     "title": "Catalogue Lunettes",
     "subtitle": "Découvrez l'ensemble de notre sélection exclusive de lunettes de soleil ALUNE.",
+    "catAll": "All",
+    "catMen": "Homme",
+    "catWomen": "Femme",
     "filterAll": "Toutes les Pièces",
     "filterFeatured": "Sélection Privée",
     "sortDefault": "Disposition par défaut",

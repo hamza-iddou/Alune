@@ -1,35 +1,100 @@
+import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { ArrowRight, ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import { PRODUCTS } from '../../data/products';
 import ProductGrid from '../../components/products/ProductGrid';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
+
+const HERO_SLIDES = [
+  {
+    image: '/Sections-IMG/S-1.jpeg',
+    alt: 'ALUNE Mediterranean Campaign',
+  },
+  {
+    image: '/Sections-IMG/S-2.jpg',
+    alt: 'ALUNE Craftsmanship and Details',
+  },
+  {
+    image: '/Sections-IMG/S-3.jpeg',
+    alt: 'ALUNE Lifestyle and Design',
+  },
+];
 
 export default function HomePage() {
   const { t, i18n } = useTranslation();
   const isRtl = i18n.language?.startsWith('ar');
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const [productsRef, productsVisible] = useScrollReveal();
+  const [craftRef, craftVisible] = useScrollReveal();
+  const [philosophyRef, philosophyVisible] = useScrollReveal();
+
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+  }, []);
+
+  const prevSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [nextSlide]);
 
   const featuredProducts = PRODUCTS.slice(0, 4);
 
   return (
     <div className="space-y-16 sm:space-y-24 lg:space-y-32 pb-24">
       
-      {/* 1. HERO SECTION */}
+      {/* 1. HERO SECTION WITH CAROUSEL */}
       <section className="pt-4 sm:pt-8 lg:pt-12 px-4 sm:px-8 lg:px-16 max-w-[1440px] mx-auto w-full">
-        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-[#EEECE7] min-h-[500px] sm:min-h-[580px] lg:min-h-[660px] flex flex-col justify-end p-6 sm:p-12 lg:p-20 border border-[#DEDCD5]/80">
+        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-[#14333A] min-h-[500px] sm:min-h-[580px] lg:min-h-[660px] flex flex-col justify-end p-6 sm:p-12 lg:p-20 border border-[#DEDCD5]/80 group">
           
-          {/* Background image using S-1 */}
+          {/* Slides */}
           <div className="absolute inset-0 z-0">
-            <img
-              src="/Sections-IMG/S-1.jpeg"
-              alt="ALUNE Luxury Eyewear Campaign"
-              className="w-full h-full object-cover object-center filter brightness-[0.90]"
-            />
+            {HERO_SLIDES.map((slide, idx) => (
+              <div
+                key={slide.image}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                  idx === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                }`}
+              >
+                <img
+                  src={slide.image}
+                  alt={slide.alt}
+                  className="w-full h-full object-cover object-center filter brightness-[0.88]"
+                />
+              </div>
+            ))}
             {/* Elegant vignette overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#14333A]/95 via-[#14333A]/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#14333A]/95 via-[#14333A]/50 to-transparent z-10" />
           </div>
 
+          {/* Carousel Arrows */}
+          <button
+            type="button"
+            onClick={isRtl ? nextSlide : prevSlide}
+            aria-label="Previous slide"
+            className="absolute start-4 sm:start-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/20 hover:bg-black/40 text-white backdrop-blur-sm border border-white/20 flex items-center justify-center transition-all opacity-80 hover:opacity-100"
+          >
+            <ChevronLeft className="w-5 h-5 rtl:rotate-180" />
+          </button>
+          <button
+            type="button"
+            onClick={isRtl ? prevSlide : nextSlide}
+            aria-label="Next slide"
+            className="absolute end-4 sm:end-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/20 hover:bg-black/40 text-white backdrop-blur-sm border border-white/20 flex items-center justify-center transition-all opacity-80 hover:opacity-100"
+          >
+            <ChevronRight className="w-5 h-5 rtl:rotate-180" />
+          </button>
+
           {/* Hero Content */}
-          <div className="relative z-10 max-w-2xl text-[#F7F5F0] space-y-4 sm:space-y-5">
+          <div className="relative z-20 max-w-2xl text-[#F7F5F0] space-y-4 sm:space-y-5 animate-hero-entrance">
             <span className="inline-block text-[11px] sm:text-xs uppercase tracking-widest font-semibold text-[#B2A77E]">
               {t('hero.subtitle')}
             </span>
@@ -57,11 +122,31 @@ export default function HomePage() {
             </div>
           </div>
 
+          {/* Slide Indicators */}
+          <div className="absolute bottom-4 sm:bottom-8 end-6 sm:end-12 z-20 flex items-center gap-2">
+            {HERO_SLIDES.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => setCurrentSlide(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  idx === currentSlide ? 'w-8 bg-[#B2A77E]' : 'w-2 bg-white/40 hover:bg-white/70'
+                }`}
+              />
+            ))}
+          </div>
+
         </div>
       </section>
 
       {/* 2. CURATED PRODUCT SHOWCASE */}
-      <section className="px-4 sm:px-8 lg:px-16 max-w-[1440px] mx-auto w-full space-y-8 sm:space-y-12">
+      <section
+        ref={productsRef}
+        className={`px-4 sm:px-8 lg:px-16 max-w-[1440px] mx-auto w-full space-y-8 sm:space-y-12 reveal-init ${
+          productsVisible ? 'reveal-visible' : ''
+        }`}
+      >
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-[#DEDCD5]">
           <div className="space-y-1.5">
             <span className="text-xs uppercase tracking-widest text-[#B2A77E] font-semibold">
@@ -90,7 +175,12 @@ export default function HomePage() {
       </section>
 
       {/* 3. EDITORIAL SECTION S-2: CRAFTSMANSHIP & DETAILS */}
-      <section className="px-4 sm:px-8 lg:px-16 max-w-[1440px] mx-auto w-full">
+      <section
+        ref={craftRef}
+        className={`px-4 sm:px-8 lg:px-16 max-w-[1440px] mx-auto w-full reveal-init ${
+          craftVisible ? 'reveal-visible' : ''
+        }`}
+      >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center bg-white border border-[#DEDCD5] rounded-2xl overflow-hidden p-6 sm:p-10 lg:p-14">
           
           <div className="lg:col-span-6 space-y-4 sm:space-y-6 order-2 lg:order-1">
@@ -127,7 +217,12 @@ export default function HomePage() {
       </section>
 
       {/* 4. EDITORIAL SECTION S-3: MEDITERRANEAN AMBIANCE */}
-      <section className="px-4 sm:px-8 lg:px-16 max-w-[1440px] mx-auto w-full">
+      <section
+        ref={philosophyRef}
+        className={`px-4 sm:px-8 lg:px-16 max-w-[1440px] mx-auto w-full reveal-init ${
+          philosophyVisible ? 'reveal-visible' : ''
+        }`}
+      >
         <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-[#14333A] text-[#F7F5F0] min-h-[420px] sm:min-h-[480px] lg:min-h-[520px] flex items-center p-6 sm:p-12 lg:p-16">
           <div className="absolute inset-0 z-0">
             <img

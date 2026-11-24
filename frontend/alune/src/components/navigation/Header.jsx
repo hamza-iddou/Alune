@@ -64,7 +64,7 @@ export default function Header() {
             <img
               src="/ALUNE-LOGO/website-header/ALUNE-header.svg"
               alt="ALUNE Eyewear"
-              className="h-7 sm:h-8 w-auto object-contain"
+              className="h-9 sm:h-11 md:h-12 w-auto object-contain"
             />
           </Link>
         </div>

@@ -71,11 +71,6 @@ export default function Footer() {
               <li>
                 <Link to="/faq" className="hover:text-white transition-colors">{t('nav.faq')}</Link>
               </li>
-              <li className="pt-2">
-                <Link to="/admin/login" className="text-xs text-[#F7F5F0]/40 hover:text-[#B2A77E] transition-colors">
-                  {t('nav.admin')}
-                </Link>
-              </li>
             </ul>
           </div>
 

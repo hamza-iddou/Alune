@@ -6,11 +6,18 @@ import ProductGrid from '../../components/products/ProductGrid';
 
 export default function ShopPage() {
   const { t } = useTranslation();
+  const [category, setCategory] = useState('all');
   const [filter, setFilter] = useState('all');
   const [sortBy, setSortBy] = useState('default');
 
   const filteredProducts = useMemo(() => {
     let result = [...PRODUCTS];
+
+    if (category === 'men') {
+      result = result.filter((p) => p.gender === 'men');
+    } else if (category === 'women') {
+      result = result.filter((p) => p.gender === 'women');
+    }
 
     if (filter === 'featured') {
       result = result.filter((p) => p.isFeatured);
@@ -21,10 +28,42 @@ export default function ShopPage() {
     }
 
     return result;
-  }, [filter, sortBy]);
+  }, [category, filter, sortBy]);
+
+  const categoryTabs = [
+    { id: 'all', label: 'All' },
+    { id: 'men', label: 'Homme' },
+    { id: 'women', label: 'Femme' },
+  ];
 
   return (
-    <div className="py-12 sm:py-16 px-5 sm:px-8 lg:px-16 max-w-[1440px] mx-auto space-y-12">
+    <div>
+      {/* Category Navigation Bar (underneath main header on Collection page only) */}
+      <div className="w-full bg-[#EEECE7]/70 border-b border-[#DEDCD5] sticky top-20 z-30 backdrop-blur-sm">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-16 flex items-center justify-center">
+          <nav className="flex items-center gap-2 sm:gap-8 py-3" aria-label="Collection Categories">
+            {categoryTabs.map((tab) => {
+              const isActive = category === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setCategory(tab.id)}
+                  className={`px-5 py-2 text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all rounded-full relative ${
+                    isActive
+                      ? 'bg-[#14333A] text-[#F7F5F0] shadow-sm'
+                      : 'text-[#212121]/70 hover:text-[#14333A] hover:bg-white/60'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              );
+            })}
+          </nav>
+        </div>
+      </div>
+
+      <div className="py-12 sm:py-16 px-5 sm:px-8 lg:px-16 max-w-[1440px] mx-auto space-y-12">
       
       {/* Page Header */}
       <div className="space-y-3 pb-8 border-b border-[#DEDCD5]">
@@ -95,6 +134,7 @@ export default function ShopPage() {
         </div>
       )}
 
+      </div>
     </div>
   );
 }
