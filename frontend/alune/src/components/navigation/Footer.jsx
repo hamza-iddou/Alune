@@ -15,14 +15,14 @@ export default function Footer() {
           
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-6">
-            <Link to="/" className="inline-block" aria-label="ALUNE Home">
+            <Link to="/" className="inline-block transition-transform hover:scale-[1.02]" aria-label="ALUNE Home">
               <img
-                src="/ALUNE-LOGO/website-footer/ALUNE-footer-light-background.svg"
+                src="/ALUNE-LOGO/website-footer/ALUNE-footer-dark-background.svg"
                 alt="ALUNE Eyewear"
-                className="h-8 w-auto brightness-200"
+                className="h-20 sm:h-24 md:h-28 w-auto object-contain"
               />
             </Link>
-            <p className="text-sm text-[#F7F5F0]/70 max-w-sm leading-relaxed">
+            <p className="text-sm text-[#F7F5F0]/75 max-w-sm leading-relaxed">
               {t('footer.tagline')}
             </p>
             <div className="pt-2">

@@ -39,7 +39,7 @@ export default function ShopPage() {
   return (
     <div>
       {/* Category Navigation Bar (underneath main header on Collection page only) */}
-      <div className="w-full bg-[#EEECE7]/70 border-b border-[#DEDCD5] sticky top-20 z-30 backdrop-blur-sm">
+      <div className="w-full bg-[#EEECE7]/70 border-b border-[#DEDCD5] sticky top-20 sm:top-24 z-30 backdrop-blur-sm">
         <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-16 flex items-center justify-center">
           <nav className="flex items-center gap-2 sm:gap-8 py-3" aria-label="Collection Categories">
             {categoryTabs.map((tab) => {

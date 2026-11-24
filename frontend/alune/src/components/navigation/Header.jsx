@@ -27,11 +27,11 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#F7F5F0]/90 backdrop-blur-md border-b border-[#DEDCD5]/60 transition-all duration-200">
-      <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-16 h-20 flex items-center justify-between">
+    <header className="sticky top-0 z-40 w-full bg-[#F7F5F0]/95 backdrop-blur-md border-b border-[#DEDCD5]/60 transition-all duration-200">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 h-20 sm:h-24 flex items-center justify-between">
         
         {/* Left: Mobile trigger & Primary Nav Links on Desktop */}
-        <div className="flex items-center gap-8">
+        <div className="flex-1 flex items-center justify-start gap-8">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -59,18 +59,18 @@ export default function Header() {
         </div>
 
         {/* Center: Brand Logo */}
-        <div className="flex-1 flex justify-center">
-          <Link to="/" className="inline-block transition-transform hover:scale-[1.01]" aria-label="ALUNE Home">
+        <div className="shrink-0 flex justify-center py-1">
+          <Link to="/" className="inline-block transition-transform hover:scale-[1.02]" aria-label="ALUNE Home">
             <img
               src="/ALUNE-LOGO/website-header/ALUNE-header.svg"
               alt="ALUNE Eyewear"
-              className="h-9 sm:h-11 md:h-12 w-auto object-contain"
+              className="h-14 sm:h-16 md:h-20 w-auto object-contain"
             />
           </Link>
         </div>
 
         {/* Right: Secondary Links & Actions */}
-        <div className="flex items-center gap-4 sm:gap-6">
+        <div className="flex-1 flex items-center justify-end gap-3 sm:gap-6">
           <nav className="hidden lg:flex items-center gap-7 me-2">
             {navLinks.slice(3).map((link) => (
               <Link
