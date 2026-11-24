@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Heart, Menu, X } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import { useFavoritesStore } from '../../store/favoritesStore';
 import LanguageSelector from './LanguageSelector';
 
@@ -35,10 +35,27 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-[#14333A] hover:bg-[#EEECE7] rounded-full transition-colors"
+            className="md:hidden p-2.5 text-[#14333A] hover:bg-[#EEECE7] rounded-full transition-colors flex items-center justify-center focus:outline-none"
             aria-label="Toggle navigation menu"
+            aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            <div className="w-5 h-4 relative flex flex-col justify-between">
+              <span
+                className={`w-full h-0.5 bg-[#14333A] rounded-full transition-all duration-300 ease-in-out origin-center ${
+                  mobileMenuOpen ? 'rotate-45 translate-y-[7px]' : ''
+                }`}
+              />
+              <span
+                className={`w-full h-0.5 bg-[#14333A] rounded-full transition-all duration-200 ease-in-out ${
+                  mobileMenuOpen ? 'opacity-0 scale-x-0' : 'opacity-100'
+                }`}
+              />
+              <span
+                className={`w-full h-0.5 bg-[#14333A] rounded-full transition-all duration-300 ease-in-out origin-center ${
+                  mobileMenuOpen ? '-rotate-45 -translate-y-[7px]' : ''
+                }`}
+              />
+            </div>
           </button>
 
           <nav className="hidden md:flex items-center gap-7">
@@ -106,15 +123,22 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden border-t border-[#DEDCD5] bg-[#F7F5F0] px-6 py-8 space-y-4 shadow-xl">
-          <nav className="flex flex-col space-y-3">
+      {/* Mobile Drawer Menu with smooth slide-down and fade */}
+      <div
+        className={`md:hidden grid transition-all duration-300 ease-in-out overflow-hidden ${
+          mobileMenuOpen ? 'grid-rows-[1fr] opacity-100 border-b border-[#DEDCD5]/60' : 'grid-rows-[0fr] opacity-0 pointer-events-none border-transparent'
+        }`}
+      >
+        <div className={`min-h-0 bg-[#F7F5F0] px-6 py-6 space-y-4 shadow-xl border-t border-[#DEDCD5]/70 transition-transform duration-300 ease-in-out ${
+          mobileMenuOpen ? 'translate-y-0' : '-translate-y-2'
+        }`}>
+          <nav className="flex flex-col space-y-2">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`text-base font-medium py-2 border-b border-[#DEDCD5]/40 transition-colors ${
+                onClick={() => setMobileMenuOpen(false)}
+                className={`text-base font-medium py-2.5 border-b border-[#DEDCD5]/40 transition-colors ${
                   location.pathname === link.to ? 'text-[#14333A] font-semibold' : 'text-[#212121]'
                 }`}
               >
@@ -123,7 +147,8 @@ export default function Header() {
             ))}
             <Link
               to="/favorites"
-              className="flex items-center justify-between text-base font-medium py-2 border-b border-[#DEDCD5]/40 text-[#212121]"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-between text-base font-medium py-2.5 border-b border-[#DEDCD5]/40 text-[#212121]"
             >
               <span>{t('nav.favorites')}</span>
               <span className="w-5 h-5 rounded-full bg-[#14333A] text-[#F7F5F0] text-xs font-bold flex items-center justify-center">
@@ -132,7 +157,7 @@ export default function Header() {
             </Link>
           </nav>
         </div>
-      )}
+      </div>
     </header>
   );
 }
